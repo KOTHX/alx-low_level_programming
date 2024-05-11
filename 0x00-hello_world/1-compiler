@@ -1,2 +1,18 @@
+// #!/bin/bash
+// gcc -c $CFILE -o 'echo $CFILE | cut -d. -f1' .o
 #!/bin/bash
-gcc -c $CFILE -o 'echo $CFILE | cut -d. -f1' .o
+
+# Check if $CFILE is set
+if [ -z "$CFILE" ]; then
+    echo "Error: CFILE variable is not set."
+    exit 1
+fi
+
+# Extract the file name without extension
+filename=$(basename "$CFILE" .c)
+
+# Compile the C file without linking
+gcc -c "$CFILE" -o "${filename}.o"
+
+# Print success message
+echo "Object file generated: ${filename}.o"
