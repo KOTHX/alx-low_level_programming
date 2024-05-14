@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  * main - Entry point
- * Description: A Printf program
+ * Description: A Printf program -Wall gcc
  * Return: Always 0 (Success)
 */
 int main(void)
